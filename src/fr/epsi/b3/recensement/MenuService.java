@@ -48,8 +48,6 @@ public class MenuService extends Recensement{
                 case 1:
                     System.out.print("Entrez le nom de la ville souhaité : ");
                     repStr= sc.nextLine();
-                    String s1 = repStr.substring(0, 1).toUpperCase();
-                    repStr = s1 + repStr.substring(1);
                     repInt = this.getPopuVille(repStr);
                     if (repInt == -1){
                         System.out.println("Le ville " + repStr + " n'existe pas.");

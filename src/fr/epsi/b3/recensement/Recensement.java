@@ -43,10 +43,13 @@ public abstract class Recensement {
     }
 
     public int getPopuVille(String nomVille) {
+        String s1 = nomVille.substring(0, 1).toUpperCase();
+        nomVille = s1 + nomVille.substring(1);
         AtomicInteger res = new AtomicInteger();
         res.set(-1);
+        String finalNomVille = nomVille;
         this.liste.forEach(liste -> {
-            if (Objects.equals(liste.getNomCom(), nomVille)) {
+            if (Objects.equals(liste.getNomCom(), finalNomVille)) {
                 res.set(liste.getPopu());
             }
         });
