@@ -17,4 +17,9 @@ public class Test extends TestCase {
         Recensement rec = new Recensement();
         assertEquals(41183,rec.getPopuVille("MeLUn"));
     }
+
+    public void testVilleQuiExistePas() throws Exception {
+        Recensement rec = new Recensement();
+        assertEquals(-1,rec.getPopuVille("biuegzpebiuegzbiuegzbiu"));
+    }
 }
