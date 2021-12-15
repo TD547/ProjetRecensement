@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public abstract class Recensement {
+public class Recensement {
     private final ArrayList<Ville> liste;
 
     public Recensement() throws FileNotFoundException {
@@ -44,7 +44,7 @@ public abstract class Recensement {
 
     public int getPopuVille(String nomVille) {
         String s1 = nomVille.substring(0, 1).toUpperCase();
-        nomVille = s1 + nomVille.substring(1);
+        nomVille = s1 + nomVille.substring(1).toLowerCase();
         AtomicInteger res = new AtomicInteger();
         res.set(-1);
         String finalNomVille = nomVille;
